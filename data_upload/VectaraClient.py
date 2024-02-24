@@ -1,3 +1,4 @@
+import json
 import logging
 import requests
 
@@ -8,6 +9,15 @@ class VectaraClient:
         self.corpus_id = corpus_id
         self.api_key = api_key
 
+    @staticmethod
+    def construct_document(job_id, job_title, raw_jd, metadata):
+        return {
+            "documentId": job_id,
+            "title": job_title,
+            "description": raw_jd,
+            "metadataJson": json.dumps(metadata),
+            "section": []
+        }
     def index_document(self, document):
         """Indexes content to the corpus.
 
@@ -22,6 +32,8 @@ class VectaraClient:
             "customer-id": f"{self.customer_id}",
             "Content-Type": "application/json"
         }
+        print(document)
+        print(json.dumps(document))
         response = requests.post(
             f"https://{API_ENDPOINT}/v1/index",
             data=document,
