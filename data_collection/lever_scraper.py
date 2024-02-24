@@ -5,7 +5,16 @@ BASE_URL = "https://jobs.lever.co/"
 TITLE_CLASS_NAME = "posting-title"
 OUTPUT_DIR = "resources/"
 
-COMPANIES = ["prelim"]
+COMPANIES = [
+    "prelim", "netflix", "Anthropic", "mistral",
+    "levelai", "welocalize", "weride", "whoop",
+    "unlikely", "shieldai", "bostondynamicsaiinstitute",
+    "sanctuary", "CopyAI", "cohere", "tonal",
+    "kungfu", "futureof-life", "percipient",
+    "covariant", "AIFund", "launchlabs", "people-ai",
+    "cognite", "WisprAI", "aicamp", "tri", "heretic-fund",
+    "pano", "fiddlerlabs", "flawlessai"
+]  # site:https://jobs.lever.co/ AI
 
 def get_job_links_for_company(company_name):
     page = requests.get(BASE_URL + company_name)
