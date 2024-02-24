@@ -24,18 +24,25 @@ CHAT_TOOLS = [
                         "description": "The title of the job.",
                     },
                     "years_of_experience_required": {
-                        "type": "integer",
-                        # If the model does not understand how it is supposed to fill the field, a good description goes a long way
+                        "type": "integer", 
                         "description": "The minimum number of years of experience required for the role.",
+                    },
+                    "education_qualification_required": {
+                        "type": "string",
+                        "description": textwrap.dedent("""
+                            The required educational qualification,
+                            This should be exactly either of High School, Bachelors, Masters, PhD
+                            """
+                        ).strip(),
                     },
                     "technical_skills_required": {
                         "type": "array",
                         "description": textwrap.dedent("""
-                                    The technical skills required (such as Python, C++).
-                                    NEVER include tools (Microsoft Word, VSCode).
-                                    NEVER include soft skills (communication, presentation).
-                                    This field could be empty if the position is not a technical position.
-                                """.strip()),
+                            The technical skills required (such as Python, C++).
+                            NEVER include tools (Microsoft Word, VSCode).
+                            NEVER include soft skills (communication, presentation).
+                            This field could be empty if the position is not a technical position.
+                        """.strip()),
                         "items": {
                             "type": "string"
                         },
