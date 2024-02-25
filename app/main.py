@@ -1,9 +1,13 @@
+import os
+
 import streamlit as st
 
 from app.JobSearcher import JobSearcher
 from app.ResumeAnalyzer import ResumeAnalyzer
 
-resume_analyzer = ResumeAnalyzer()
+MODEL_API_KEY = os.environ["MODEL_API_KEY"]
+MODEL_NAME = os.environ["MODEL_NAME"]
+resume_analyzer = ResumeAnalyzer(MODEL_API_KEY, MODEL_NAME)
 job_searcher = JobSearcher()
 
 st.set_page_config(layout="wide")
