@@ -132,9 +132,9 @@ class ResumeAnalyzer:
         )
         self.model_name = model_name
 
-    def analyze(self, resume_input):
+    def analyze(self, resume_path):
         nest_asyncio.apply()
-        documents = LlamaParse(result_type="text").load_data(resume_input)
+        documents = LlamaParse(result_type="text").load_data(resume_path)
         text = str(documents[0])
         # Not recommended to change the system prompt,
         messages = [
