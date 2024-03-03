@@ -1,10 +1,8 @@
 import os
-from io import StringIO
 
 import streamlit as st
 
-from app.JobSearcher import JobSearcher
-from app.ResumeAnalyzer import ResumeAnalyzer
+from providers import JobSearcher, ResumeAnalyzer
 
 MODEL_API_KEY = os.environ["MODEL_API_KEY"]
 MODEL_NAME = os.environ["MODEL_NAME"]

@@ -1,4 +1,4 @@
 streamlit==1.31.1
-llama-index==0.10.12
-llama-parser==0.1.2
+llama-index==0.10.14
+llama-parse==0.3.4
 llama-index-indices-managed-vectara==0.1.2
